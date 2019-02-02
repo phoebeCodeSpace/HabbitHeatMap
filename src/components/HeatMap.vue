@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     download () {
-      window.open('/data/template.numbers')
+      window.open(`${config.basePath}/data/template.numbers`)
     },
     getFile (e) {
       const file = e.target.files[0]
@@ -99,9 +99,7 @@ export default {
       }
     },
     initData () {
-      // var buckets = this.colors.length
-      // const url = '/data/201901-time.csv'
-      const url = '/data/checklist.csv'
+      const url = `${config.basePath}/data/checklist.csv`
       d3.csv(url, (d) => {
         return {
           ...d, date: new Date(d.date)

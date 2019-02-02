@@ -1,5 +1,8 @@
 
 export default {
+  basePath: process.env.NODE_ENV === 'production'
+    ? '/HabbitHeatMap'
+    : '',
   month: {
     'January': '一月'
   },
