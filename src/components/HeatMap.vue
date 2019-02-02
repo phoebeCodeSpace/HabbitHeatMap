@@ -89,6 +89,7 @@ export default {
       reader.readAsText(file)
       reader.onload = (evt) => {
         document.querySelector('#heatmap').innerHTML = ''
+        this.finishingRate = null
         this.data = d3.csvParse(evt.target.result, (d) => {
           return {
             ...d, date: new Date(d.date)
